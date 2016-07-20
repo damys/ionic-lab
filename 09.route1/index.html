@@ -21,14 +21,16 @@
 </body>
 
 </html>
+
 <!--
+可以单独引入
 <script src="./js/app.js"></script>
 <script src="./js/controller.js"></script>
 -->
 
 <script>
 
-//可独立app.js
+//也可以直接写在页面 app.js 也可独立文件引入
 angular.module('myApp', ['ionic','myApp.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
 	$stateProvider
@@ -92,7 +94,7 @@ angular.module('myApp', ['ionic','myApp.controllers'])
 	$urlRouterProvider.otherwise('/tab/tab1'); 
 });
 
-//可独立controller.js
+//也可以直接写在页面controller.js，也可独立文件引入
 angular.module('myApp.controllers', [])
 .controller('tab1Controller', function($scope){
 	$scope.title='tab1Controller';
