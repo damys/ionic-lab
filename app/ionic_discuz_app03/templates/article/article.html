@@ -1,0 +1,16 @@
+<ion-view view-title="文章">
+    <ion-content>
+
+        <ion-list class="topics_list">
+            <ion-item class="item-thumbnail-left" collection-repeat="topic in portalListData" href="#/news_content/{{topic.aid}}"
+                      collection-item-width="100%" collection-item-height="88px">
+                <img ng-if="topic.pic" ng-src="{{ENV.imgUrl}}{{topic.pic}}">
+                <img ng-if="!topic.pic" ng-src="img/ionic.png">
+                <h2>{{topic.title}}</h2>
+                <p class="summary">
+                </p>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>
