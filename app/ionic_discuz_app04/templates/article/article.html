@@ -1,0 +1,22 @@
+<ion-view view-title="文章">
+    <ion-content>
+
+
+        <ion-refresher
+                pulling-text="下拉刷新..."
+                on-refresh="doRefresh()">
+        </ion-refresher>
+
+        <ion-list class="topics_list">
+            <ion-item class="item-thumbnail-left" collection-repeat="topic in portalListData" href="#/news_content/{{topic.aid}}"
+                      collection-item-width="100%" collection-item-height="88px">
+                <img ng-if="topic.pic" ng-src="{{ENV.imgUrl}}{{topic.pic}}">
+                <img ng-if="!topic.pic" ng-src="img/ionic.png">
+                <h2>{{topic.title}}</h2>
+                <p class="summary">
+                </p>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll   on-infinite="loadMore()"  distance="1%" ng-if="hasNextPage()">        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>
