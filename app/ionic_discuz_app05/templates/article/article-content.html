@@ -1,0 +1,19 @@
+
+<ion-view title="文章详情">
+     <ion-nav-buttons side="left">
+        <!-- <button class="button-icon ion-arrow-left-c" ng-click="backView()"></button>-->
+
+        <button class="button back-button buttons button-icon ion-arrow-left-c header-item" ng-click="$ionicGoBack()">
+            <span class="back-text" style="-webkit-transform: translate3d(0px, 0px, 0px);">
+                <span class="default-title hide">Back</span>
+            </span>
+        </button>
+
+    </ion-nav-buttons>
+
+    <ion-content padding="true">
+
+        <div class="article_content" ng-bind-html="NewsContentData[0]['content']"></div>
+
+    </ion-content>
+</ion-view>
