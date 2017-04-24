@@ -1,0 +1,40 @@
+
+<ion-view title="帖子详情">
+     <ion-nav-buttons side="left">
+        <!-- <button class="button-icon ion-arrow-left-c" ng-click="backView()"></button>-->
+
+        <button class="button back-button buttons button-icon ion-arrow-left-c header-item" ng-click="$ionicGoBack()">
+            <span class="back-text" style="-webkit-transform: translate3d(0px, 0px, 0px);">
+                <span class="default-title hide">Back</span>
+            </span>
+        </button>
+
+    </ion-nav-buttons>
+
+    <ion-content padding="true">
+
+     <div class="first_thread">
+        <h3>{{thread[0]['subject']}}</h3>
+
+         <div ng-bind-html="thread[0]['message']"></div>
+
+     </div>
+
+
+        <div class="replay">
+            <hr>
+            <ul>
+                <li ng-repeat="(key,val) in thread" ng-if="key>0">
+
+                    <div ng-bind-html="val['message']"></div>
+                    <br><br> <br><br> <br><br> <br><br>
+                </li>
+
+            </ul>
+
+
+
+        </div>
+
+    </ion-content>
+</ion-view>
