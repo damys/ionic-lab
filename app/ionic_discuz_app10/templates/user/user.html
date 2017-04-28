@@ -1,0 +1,70 @@
+<ion-view view-title="我">
+    <ion-content class="setting">
+        <ion-list>
+            <ion-item class="login"  ng-click="login()" ng-if="!userInfo" href="#/tab/login">
+
+                <img src="img/commentfailure.png" class="avatar">
+                <br>
+                <br>
+
+                <p ng-if="!userInfo">立即登录</p>
+                <ion-spinner icon="ripple" ng-if="processing"></ion-spinner>
+            </ion-item>
+
+            <ion-item class="item-avatar item-icon-right" ng-if="userInfo" href="#/tab/user/personal">
+                <img ng-src="img/commentfailure.png" reset-img>
+                <h2>{{userInfo.username}}</h2>
+                <p>积分：1000</p>
+                <!-- <i class="icon ion-ios-arrow-right"></i> -->
+                <i class="icon ion-chevron-right icon-accessory"></i>
+
+            </ion-item>
+        </ion-list>
+
+
+
+        <div class="button-bar bar-light">
+
+            <a class="button  icon-left" ng-click="collectList()"><i class="icon ion-android-star-outline"></i> 收藏</a>
+            <a class="button  icon-left" ng-click="messageList()"><i class="icon ion-email"></i> 消息
+      <span ng-if="messagesCount" class="badge badge-assertive messagesCount">
+        {{messagesCount > 9 ? 'N' : messagesCount}}
+      </span></a>
+            <!-- <a class="button">Third</a> -->
+        </div>
+
+
+        <ion-list>
+            <ion-item class="item-divider item-gap">
+            </ion-item>
+            <!-- <ion-toggle ng-model="settings.showAvatar" ng-change="settingsChange()">
+              显示头像
+            </ion-toggle> -->
+            <ion-toggle ng-model="settings.sendFrom" ng-change="settingsChange()">
+                显示文章图片
+            </ion-toggle>
+
+            <ion-item class="item-divider">
+                关于
+            </ion-item>
+            <ion-item>
+                当前版本
+                        <span class="item-note">
+                         v2.2
+                        </span>
+            </ion-item>
+            <ion-item ng-click="feedback()">
+                意见反馈
+                        <span class="item-note">
+                          Email:phonegap100@qq.com
+                        </span>
+            </ion-item>
+            <ion-item onclick="window.open('http://phonegap100.com', '_blank', 'location=yes')">
+                关于作者
+            </ion-item>
+            <ion-item onclick="window.open('http://phonegap100.com', '_blank', 'location=yes')">
+                关于phonegap中文网
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
