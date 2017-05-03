@@ -1,0 +1,98 @@
+/* Empty. Add your own CSS if you like */
+
+
+/*tab*/
+
+.tabs-color-positive .tab-item{
+    color:#999;
+}
+
+
+/*home*/
+.home-slide ion-slide{
+
+    height: 150px;
+    width: 100%;
+
+}
+
+.home-slide ion-slide img{
+
+    height: 150px;
+    width: 100%;
+
+}
+.slider-pager{
+    bottom: 8px;
+}
+.slider-pager .slider-pager-page{
+    font-size: 5px;
+
+}
+
+
+
+/*首页块*/
+
+.row-h-2{
+    height:160px;
+
+}
+.c-h-2{
+    height: 144px;
+    padding-top:20%;
+
+}
+
+
+.first-list .col{
+
+    height:85px;
+    text-align:center;
+    line-height:32px;
+}
+.first-list .col.light div{
+    text-align:left;
+}
+.first-list .col .icon{
+    font-size:32px;
+}
+
+/*二级菜单*/
+.bar .sub_header_list .button.button-clear{
+
+    border-bottom: 1px solid #eee;
+}
+.sub_header_list{
+    width: 160%;
+}
+.sub_header_list .button{
+    width: 20%;
+    color:#666;
+}
+.bar .sub_header_list .button.sub_button_select{
+    border-bottom:2px solid #387ef5;
+    position:relative;
+}
+.bar-subheader{
+    border-bottom: none;
+}
+
+/*文章详情*/
+
+.article_content img{
+
+    max-width:90%;
+}
+
+
+/*setting*/
+
+
+.setting .avatar {
+    width: 50px;
+    border-radius: 10px;
+    vertical-align: middle; }
+.setting .login {
+    text-align: center;
+    /* background-color: #4EB554; */ }
