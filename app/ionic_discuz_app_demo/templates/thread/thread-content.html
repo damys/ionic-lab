@@ -1,0 +1,80 @@
+<ion-view title="社区详情">
+    <ion-nav-buttons side="left">
+        <!-- <button class="button-icon ion-arrow-left-c" ng-click="backView()"></button>-->
+
+        <button class="button back-button buttons button-icon ion-arrow-left-c header-item" ng-click="$ionicGoBack()">
+            <span class="back-text" style="-webkit-transform: translate3d(0px, 0px, 0px);">
+                <span class="default-title hide">Back</span>
+            </span>
+        </button>
+
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="row topic">
+            <div class="col col90">
+                <h4 class="title">{{thread[0].subject}} </h4>
+                <div class="summary">
+                    <strong>
+                        <a href="#/user/XinHuaLuFang" class="ng-binding">
+                            <img ng-src="http://7xj5bc.com1.z0.glb.clouddn.com/u/7486847?v=3&amp;s=120&amp;imageView2/2/w/120" class="avatar" reset-img="" src="http://7xj5bc.com1.z0.glb.clouddn.com/u/7486847?v=3&amp;s=120&amp;imageView2/2/w/120">
+                            <!-- <img ng-src="{{topic.author.avatar_url  | protocol}}" class="avatar" />  -->
+                            {{thread[0].author}}
+                        </a>
+                    </strong>
+                    <span class="item-note">12天前</span>
+                </div>
+                <div class="topic-content" ng-bind-html="thread[0].message">
+                </div>
+            </div>
+        </div>
+
+        <ion-list class="replies">
+            <ion-item ng-if="topic.replies.length == 0">
+                暂无评论
+            </ion-item>
+            <ion-item class="item-avatar" ng-repeat="(key,reply) in thread" ng-click="showActions(reply)"  ng-if="key >0">
+
+
+                    <img ng-src="img/ionic.png"  reset-img>
+                    <p>
+                        <a href="#/user/XinHuaLuFang" ng-class="{'bold': reply.author.loginname == topic.author.loginname}" class="ng-binding bold">
+                           {{reply.author}}
+                        </a>
+                        <span class="item-note" am-time-ago="reply.create_at">12天前</span>
+                        <!-- ngIf: reply.ups.length > 0 -->
+                      <span class="item-note cnode" ng-if="reply.ups.length > 0">
+                        <i class="icon ion-thumbsup"></i> {{reply.ups.length}} &nbsp;
+                      </span>
+                    </p>
+
+                    <div class="topic-content" ng-bind-html="reply.message">
+                    </div>
+
+            </ion-item>
+
+        </ion-list>
+        <br />
+
+    </ion-content>
+
+
+    <ion-footer-bar align-title="left" class="bar-light reply-new" keyboard-attach>
+        <label class="item-input-wrapper">
+            <input type="text" placeholder="回复" ng-model="replyData.content"  >
+        </label>
+        <button class="button button-small button-clear button-positive" ng-click="saveReply()" >
+            提交
+        </button>
+    </ion-footer-bar>
+
+    <!--
+      <ion-footer-bar align-title="left" class="bar-light reply-new" keyboard-attach>
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="回复" ng-model="replyData.content" ng-disabled="loginName == null">
+    </label>
+    <button class="button button-small button-clear button-positive" ng-click="saveReply()" ng-class="{'disabled':loginName == null || replyData.content == ''}">
+      提交
+    </button>
+  </ion-footer-bar>
+    -->
+</ion-view>

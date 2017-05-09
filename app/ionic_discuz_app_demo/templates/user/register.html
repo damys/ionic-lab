@@ -1,0 +1,23 @@
+<ion-view title="注册" hide-tabs>
+    <ion-content>
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">Username</span>
+                <input type="text" ng-model="user.username">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password" ng-model="user.Password">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">RePassword</span>
+                <input type="password" ng-model="user.RePassword">
+            </label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive" ng-click="signIn(user)">
+                Sign-In
+            </button>
+        </div>
+    </ion-content>
+</ion-view>
